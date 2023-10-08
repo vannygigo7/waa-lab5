@@ -1,0 +1,75 @@
+GET http://localhost:8080/customers
+
+###
+
+GET http://localhost:8080/customers/10
+
+###
+
+POST http://localhost:8080/customers
+content-type:application/json
+
+{
+  "firstname": "Micheal7",
+  "lastname": "Smith7",
+  "orders": [
+    {
+      "date": "2023-10-14"
+    },
+    {
+      "date": "2023-10-15"
+    }
+  ]
+}
+
+###
+
+PUT http://localhost:8080/customers/10
+content-type:application/json
+
+{
+  "id": 10,
+  "firstname": "Micheal 10",
+  "lastname": "Smith 10"
+}
+
+###
+
+DELETE http://localhost:8080/customers/7
+
+###
+
+GET http://localhost:8080/customers/10/orders
+
+###
+
+GET http://localhost:8080/customers/10/orders/7
+
+###
+
+POST http://localhost:8080/customers/10/orders
+content-type:application/json
+
+{
+  "date": "2023-12-10",
+  "orderLines": [
+    {
+      "quantity": 10,
+      "product": {
+        "id": 1,
+        "name": "P1",
+        "description": "Test P",
+        "title": "A1"
+      }
+    },
+    {
+      "quantity": 20,
+      "product": {
+        "id": 2,
+        "name": "P2",
+        "description": "Test P",
+        "artist": "A2"
+      }
+    }
+  ]
+}
